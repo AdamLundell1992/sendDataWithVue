@@ -1,5 +1,8 @@
 # newpropquest
+Other things installed :
 
+- buefy
+https://buefy.org/
 ## Project setup
 ```
 npm install
