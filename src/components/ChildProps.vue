@@ -1,0 +1,29 @@
+<template>
+  <div>
+    <b-field class="recived" label="Recived in child:">
+      <span class="text">{{ messageProp.message }}</span>
+    </b-field>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "PropsChild",
+  props: {
+    messageProp: {
+      type: Object,
+      default: () => ({ a: 2 }),
+      required: true,
+    },
+  },
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.text {
+  text-align: center !important;
+  font-family: Stencil Std, fantasy;
+  font-size: 5rem;
+}
+</style>

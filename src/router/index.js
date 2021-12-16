@@ -1,26 +1,58 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    path: "/sendDataWithProps",
+    name: "props",
+    component: () =>
+      import(
+        /* webpackChunkName: "SendDataProps" */ "../views/SendDataProps.vue"
+      ),
+  },
+
+  {
+    path: "/InjectProvide",
+    name: "Provide",
+    component: () =>
+      import(
+        /* webpackChunkName: "SendDataInkectProvide" */ "../views/SendDataInkectProvide.vue"
+      ),
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: "/sendDataRefs",
+    name: "refs",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import(
+        /* webpackChunkName: "SendDataWithRefs" */ "../views/SendDataWithRefs.vue"
+      ),
+  },
+  {
+    path: "/sendDataPrototype",
+    name: "prototype",
+    component: () =>
+      import(
+        /* webpackChunkName: "SendDataWithPrototype" */ "../views/SendDataWithPrototype.vue"
+      ),
+  },
+  {
+    path: "/sendWithParent",
+    name: "parent",
+    component: () =>
+      import(
+        /* webpackChunkName: "SendWithParent" */ "../views/SendWithParent.vue"
+      ),
+  },
+  {
+    path: "/sendDataWithVuex",
+    name: "vuex",
+    component: () =>
+      import(
+        /* webpackChunkName: "SendDataWithVuex" */ "../views/SendDataWithVuex.vue"
+      ),
   },
 ];
-
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
